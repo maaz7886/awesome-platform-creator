@@ -19,6 +19,16 @@
  */
 
 @theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ink: var(--ink);
+  --color-ink-alt: var(--ink-alt);
+  --color-lime: var(--lime);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-cream: var(--cream);
+  --color-clay: var(--clay);
+  --color-hairline: var(--hairline);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -26,6 +36,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -141,4 +152,90 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+/* ── Maaz Patel / Aivalytics theme ─────────────────────────────── */
+:root {
+  --ink: oklch(0.17 0.008 300);
+  --ink-alt: oklch(0.22 0.018 305);
+  --lime: oklch(0.91 0.21 122);
+  --lime-foreground: oklch(0.17 0.008 300);
+  --cream: oklch(0.95 0.014 95);
+  --clay: oklch(0.74 0.07 40);
+  --hairline: oklch(1 0 0 / 12%);
+
+  --background: var(--ink);
+  --foreground: var(--cream);
+  --card: var(--ink-alt);
+  --card-foreground: var(--cream);
+  --popover: var(--ink-alt);
+  --popover-foreground: var(--cream);
+  --primary: var(--lime);
+  --primary-foreground: var(--lime-foreground);
+  --secondary: var(--ink-alt);
+  --secondary-foreground: var(--cream);
+  --muted: var(--ink-alt);
+  --muted-foreground: oklch(0.72 0.008 300);
+  --accent: var(--ink-alt);
+  --accent-foreground: var(--cream);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--lime);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--cream);
+  paint-order: stroke fill;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
 }
