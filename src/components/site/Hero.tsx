@@ -14,9 +14,22 @@ const TICKER = [
 export function Hero() {
   return (
     <>
-      <section id="top" className="relative bg-ink pt-28 md:pt-24">
+      <section id="top" className="relative isolate overflow-hidden bg-ink pt-28 md:pt-24">
+        <div aria-hidden="true" className="absolute inset-0 -z-10">
+          <img
+            src={portrait}
+            alt=""
+            width={728}
+            height={1568}
+            className="absolute inset-y-0 right-0 h-full w-full object-cover object-[75%_center] opacity-60 md:w-[62%] md:object-[center_20%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
+        </div>
+
         <div className="mx-auto grid max-w-[1400px] items-stretch gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-0">
           <div className="flex flex-col justify-center px-6 py-12 md:px-12 lg:py-28">
+
             <p className="label-mono flex items-center gap-3 text-muted-foreground">
               <span className="inline-block size-1.5 rounded-full bg-lime" />
               Bangalore · India
