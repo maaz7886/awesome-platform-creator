@@ -34,14 +34,16 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <Founder />
+        <SignatureTopic />
         <StartHere />
         <Engage />
         <Audience />
         <Campus />
-        <SignatureTopic />
         <Room />
         <WhyThisWork />
         <Contact />
+
       </main>
       <Footer />
     </div>
