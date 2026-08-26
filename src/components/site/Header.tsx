@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { mailto } from "./primitives";
 
 const NAV = [
+  { label: "The founder", href: "#founder" },
+  { label: "Signature topic", href: "#signature" },
   { label: "Ways to engage", href: "#engage" },
-  { label: "Who it is for", href: "#audience" },
-  { label: "Campus programs", href: "#campus" },
   { label: "Contact", href: "#contact" },
 ];
+
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

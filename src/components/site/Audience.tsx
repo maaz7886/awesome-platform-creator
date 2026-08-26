@@ -19,7 +19,7 @@ const GROUPS = [
   {
     n: "04",
     title: "For teams & founders",
-    body: "Find leverage in agents, automation, product execution, and the operating model of an AI-native company.",
+    body: "Find leverage in agents, automation, product execution, and the operating model of a Veritative Company.",
   },
 ];
 

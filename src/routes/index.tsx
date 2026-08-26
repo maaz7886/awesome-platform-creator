@@ -2,15 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
+import { Founder } from "@/components/site/Founder";
 import { StartHere, Engage } from "@/components/site/Engage";
 import { Audience } from "@/components/site/Audience";
 import { Campus, SignatureTopic } from "@/components/site/Campus";
 import { Room, WhyThisWork } from "@/components/site/Room";
 import { Contact, Footer } from "@/components/site/Contact";
 
-const TITLE = "Maaz Patel — AI Platform Architect & Keynote Speaker";
+const TITLE = "Maaz Patel — Founder of Aivalytics & The Rise of Veritative Companies";
 const DESCRIPTION =
-  "Keynotes, student bootcamps, faculty enablement, and AI-ready campus programs. Maaz Patel turns AI capability into working systems and measurable progress.";
+  "Maaz Patel, Founder & CEO of Aivalytics, on the rise of Veritative Companies: small expert teams amplified by AI agents, automation, and intelligent systems.";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,14 +34,16 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <Founder />
+        <SignatureTopic />
         <StartHere />
         <Engage />
         <Audience />
         <Campus />
-        <SignatureTopic />
         <Room />
         <WhyThisWork />
         <Contact />
+
       </main>
       <Footer />
     </div>
