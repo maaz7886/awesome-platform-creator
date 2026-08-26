@@ -1,5 +1,8 @@
-import portrait from "@/assets/portrait.jpg";
+import portraitAsset from "@/assets/maaz-portrait.jpg.asset.json";
 import { mailto, SolidCta } from "./primitives";
+
+const portrait = portraitAsset.url;
+
 
 const TICKER = [
   "15,000+ learner interactions",
