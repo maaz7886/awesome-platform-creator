@@ -73,16 +73,8 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="relative min-h-[420px] lg:min-h-[720px]">
-            <img
-              src={portrait}
-              alt="Maaz Patel, founder and CEO of Aivalytics, in a black suit"
-              width={1024}
-              height={1536}
-              className="absolute inset-0 size-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-transparent" />
-          </div>
+          <div className="hidden lg:block lg:min-h-[720px]" />
+
         </div>
       </section>
 
