@@ -4,7 +4,7 @@ const OPTIONS = [
   {
     n: "01",
     title: "Invite a keynote or masterclass",
-    body: "Give your audience a clear, practical view of AI, agents, the future of work, and AI-native companies.",
+    body: "Give your audience a clear, practical view of AI, agents, the future of work, and Veritative Companies.",
     fit: "Best for conferences, leadership groups, and large audiences.",
   },
   {
@@ -32,7 +32,7 @@ const FIELD_GUIDE = [
   "AI agents & multi-agent systems",
   "Workflow automation",
   "AI for engineering, management & research",
-  "AI-native project management",
+  "Veritative project management",
   "Productivity, analysis & decisions",
   "AI entrepreneurship & rapid prototyping",
   "Future of work & careers",
