@@ -65,7 +65,10 @@ export function Campus() {
 
 export function SignatureTopic() {
   return (
-    <section className="relative overflow-hidden bg-lime px-6 py-24 md:px-12 md:py-36">
+    <section
+      id="signature"
+      className="relative overflow-hidden bg-lime px-6 py-24 md:px-12 md:py-36"
+    >
       <span
         aria-hidden="true"
         className="display pointer-events-none absolute -right-8 top-1/2 -translate-y-1/2 text-[28rem] leading-none text-lime-foreground/[0.06] select-none"
@@ -74,16 +77,16 @@ export function SignatureTopic() {
       </span>
       <div className="relative mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[1fr_2fr]">
         <Reveal>
-          <p className="label-mono text-lime-foreground/70">05 / Signature topic</p>
+          <p className="label-mono text-lime-foreground/70">02 / Signature topic</p>
           <div className="mt-6 w-20 border-t border-lime-foreground/30" />
         </Reveal>
         <Reveal delay={80}>
           <h2 className="display text-[clamp(2.75rem,7vw,5.5rem)] text-lime-foreground">
             The rise of
             <br />
-            AI-native
+            Veritative
             <br />
-            companies.
+            Companies.
           </h2>
           <p className="mt-10 max-w-2xl text-lg leading-relaxed text-lime-foreground/80">
             Smaller expert teams. Amplified by AI agents, intelligent software, automation, rapid
@@ -103,7 +106,7 @@ export function SignatureTopic() {
             </p>
           </div>
           <a
-            href={mailto("Invite: The rise of AI-native companies")}
+            href={mailto("Invite: The rise of Veritative Companies")}
             className="label-mono group mt-12 inline-flex items-center gap-4 bg-lime-foreground px-6 py-4 text-lime transition-opacity hover:opacity-85"
           >
             Invite this conversation
@@ -116,3 +119,4 @@ export function SignatureTopic() {
     </section>
   );
 }
+
