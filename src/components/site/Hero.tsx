@@ -42,7 +42,10 @@ export function Hero() {
             <h1 className="display mt-8 text-[clamp(3rem,9vw,6.5rem)]">
               <span className="block text-cream">Technical</span>
               <span className="block text-lime">depth.</span>
-              <span className="text-outline block">Real execution.</span>
+              <span className="text-outline block whitespace-nowrap text-[clamp(2rem,6vw,4.5rem)]">
+                Real execution.
+              </span>
+
             </h1>
 
             <p className="mt-10 max-w-xl border-l-2 border-lime pl-5 text-lg leading-relaxed text-muted-foreground">
