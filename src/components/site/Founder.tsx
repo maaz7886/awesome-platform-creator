@@ -1,7 +1,11 @@
-import portraitAsset from "@/assets/maaz-portrait.jpg.asset.json";
 import { Eyebrow, Reveal, Section, TextCta, mailto } from "./primitives";
 
-const portrait = portraitAsset.url;
+const SIGNALS = [
+  { n: "15K+", l: "Learner interactions" },
+  { n: "01", l: "Operator, not spectator" },
+  { n: "03", l: "Tech · Business · Education" },
+  { n: "∞", l: "Systems shipped, not slides" },
+];
 
 const FACTS = [
   { k: "Role", v: "Founder & CEO, Aivalytics" },
@@ -15,18 +19,36 @@ export function Founder() {
     <Section id="founder">
       <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
         <Reveal>
-          <div className="relative overflow-hidden border border-hairline bg-ink-alt">
-            <img
-              src={portrait}
-              alt="Maaz Patel, Founder and CEO of Aivalytics"
-              width={728}
-              height={1568}
-              loading="lazy"
-              className="h-full w-full object-cover object-[center_20%] grayscale-[35%]"
-            />
-            <p className="label-mono absolute bottom-0 left-0 bg-lime px-4 py-2 text-lime-foreground">
-              Maaz Patel
-            </p>
+          <div className="relative flex h-full min-h-[520px] flex-col justify-between overflow-hidden border border-hairline bg-ink-alt p-8">
+            <span
+              aria-hidden="true"
+              className="display pointer-events-none absolute -right-6 -top-16 select-none text-[14rem] leading-none text-cream/[0.04]"
+            >
+              MP
+            </span>
+
+            <div className="relative">
+              <p className="label-mono text-clay">Signal</p>
+              <div className="mt-8 grid grid-cols-2 border-l border-t border-hairline">
+                {SIGNALS.map((s) => (
+                  <div key={s.l} className="border-b border-r border-hairline p-5">
+                    <p className="display text-3xl text-lime">{s.n}</p>
+                    <p className="label-mono mt-3 leading-relaxed text-muted-foreground">{s.l}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative mt-10">
+              <p className="display text-2xl leading-tight text-cream">
+                “Build the system first.
+                <br />
+                Then talk about it.”
+              </p>
+              <p className="label-mono absolute -bottom-8 -left-8 bg-lime px-4 py-2 text-lime-foreground">
+                Maaz Patel
+              </p>
+            </div>
           </div>
         </Reveal>
 
