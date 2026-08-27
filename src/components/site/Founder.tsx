@@ -1,7 +1,11 @@
-import portraitAsset from "@/assets/maaz-portrait.jpg.asset.json";
 import { Eyebrow, Reveal, Section, TextCta, mailto } from "./primitives";
 
-const portrait = portraitAsset.url;
+const SIGNALS = [
+  { n: "15K+", l: "Learner interactions" },
+  { n: "01", l: "Operator, not spectator" },
+  { n: "03", l: "Tech · Business · Education" },
+  { n: "∞", l: "Systems shipped, not slides" },
+];
 
 const FACTS = [
   { k: "Role", v: "Founder & CEO, Aivalytics" },
