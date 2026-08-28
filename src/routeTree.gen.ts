@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiNativeCompaniesRouteImport } from './routes/ai-native-companies'
+import { Route as AiSystemsRouteImport } from './routes/ai-systems'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as InstitutionsRouteImport } from './routes/institutions'
+import { Route as MediaKitRouteImport } from './routes/media-kit'
+import { Route as SpeakingRouteImport } from './routes/speaking'
+import { Route as WorkRouteImport } from './routes/work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiNativeCompaniesRoute = AiNativeCompaniesRouteImport.update({
+  id: '/ai-native-companies',
+  path: '/ai-native-companies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiSystemsRoute = AiSystemsRouteImport.update({
+  id: '/ai-systems',
+  path: '/ai-systems',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstitutionsRoute = InstitutionsRouteImport.update({
+  id: '/institutions',
+  path: '/institutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaKitRoute = MediaKitRouteImport.update({
+  id: '/media-kit',
+  path: '/media-kit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpeakingRoute = SpeakingRouteImport.update({
+  id: '/speaking',
+  path: '/speaking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-native-companies': typeof AiNativeCompaniesRoute
+  '/ai-systems': typeof AiSystemsRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/institutions': typeof InstitutionsRoute
+  '/media-kit': typeof MediaKitRoute
+  '/speaking': typeof SpeakingRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-native-companies': typeof AiNativeCompaniesRoute
+  '/ai-systems': typeof AiSystemsRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/institutions': typeof InstitutionsRoute
+  '/media-kit': typeof MediaKitRoute
+  '/speaking': typeof SpeakingRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-native-companies': typeof AiNativeCompaniesRoute
+  '/ai-systems': typeof AiSystemsRoute
+  '/contact': typeof ContactRoute
+  '/insights': typeof InsightsRoute
+  '/institutions': typeof InstitutionsRoute
+  '/media-kit': typeof MediaKitRoute
+  '/speaking': typeof SpeakingRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-native-companies'
+    | '/ai-systems'
+    | '/contact'
+    | '/insights'
+    | '/institutions'
+    | '/media-kit'
+    | '/speaking'
+    | '/work'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/ai-native-companies'
+    | '/ai-systems'
+    | '/contact'
+    | '/insights'
+    | '/institutions'
+    | '/media-kit'
+    | '/speaking'
+    | '/work'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-native-companies'
+    | '/ai-systems'
+    | '/contact'
+    | '/insights'
+    | '/institutions'
+    | '/media-kit'
+    | '/speaking'
+    | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AiNativeCompaniesRoute: typeof AiNativeCompaniesRoute
+  AiSystemsRoute: typeof AiSystemsRoute
+  ContactRoute: typeof ContactRoute
+  InsightsRoute: typeof InsightsRoute
+  InstitutionsRoute: typeof InstitutionsRoute
+  MediaKitRoute: typeof MediaKitRoute
+  SpeakingRoute: typeof SpeakingRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-native-companies': {
+      id: '/ai-native-companies'
+      path: '/ai-native-companies'
+      fullPath: '/ai-native-companies'
+      preLoaderRoute: typeof AiNativeCompaniesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-systems': {
+      id: '/ai-systems'
+      path: '/ai-systems'
+      fullPath: '/ai-systems'
+      preLoaderRoute: typeof AiSystemsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institutions': {
+      id: '/institutions'
+      path: '/institutions'
+      fullPath: '/institutions'
+      preLoaderRoute: typeof InstitutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media-kit': {
+      id: '/media-kit'
+      path: '/media-kit'
+      fullPath: '/media-kit'
+      preLoaderRoute: typeof MediaKitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/speaking': {
+      id: '/speaking'
+      path: '/speaking'
+      fullPath: '/speaking'
+      preLoaderRoute: typeof SpeakingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AiNativeCompaniesRoute: AiNativeCompaniesRoute,
+  AiSystemsRoute: AiSystemsRoute,
+  ContactRoute: ContactRoute,
+  InsightsRoute: InsightsRoute,
+  InstitutionsRoute: InstitutionsRoute,
+  MediaKitRoute: MediaKitRoute,
+  SpeakingRoute: SpeakingRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
