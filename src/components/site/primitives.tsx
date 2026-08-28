@@ -1,9 +1,15 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export const MAIL = "maazaivalytics@gmail.com";
 
 export function mailto(subject: string) {
   return `mailto:${MAIL}?subject=${encodeURIComponent(subject)}`;
+}
+
+/** Contextual inquiry path — preselects the inquiry type on the contact form. */
+export function inquiry(type: string) {
+  return { to: "/contact", search: { type } } as const;
 }
 
 export function Reveal({
@@ -64,7 +70,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`${alt ? "bg-ink-alt" : "bg-ink"} px-6 py-24 md:px-12 md:py-36 ${className}`}
+      className={`${alt ? "bg-ink-alt" : "bg-ink"} px-6 py-24 md:px-12 md:py-32 ${className}`}
     >
       <div className="mx-auto max-w-[1200px]">{children}</div>
     </section>
@@ -84,6 +90,50 @@ export function Arrow({ className = "" }: { className?: string }) {
   );
 }
 
+const solid =
+  "label-mono group inline-flex items-center gap-4 bg-lime px-6 py-4 text-lime-foreground transition-colors hover:bg-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
+const ghost =
+  "label-mono group inline-flex items-center gap-4 border border-hairline px-6 py-4 text-cream transition-colors hover:border-lime hover:text-lime focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
+const text =
+  "label-mono group inline-flex items-center gap-3 text-lime transition-colors hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
+
+const styles = { solid, ghost, text } as const;
+
+type CtaProps = {
+  children: ReactNode;
+  variant?: keyof typeof styles;
+  className?: string;
+};
+
+/** Internal CTA that routes to the contact form with a preselected inquiry type. */
+export function InquiryCta({
+  type,
+  children,
+  variant = "text",
+  className = "",
+}: CtaProps & { type: string }) {
+  return (
+    <Link to="/contact" search={{ type }} className={`${styles[variant]} ${className}`}>
+      {children}
+      <Arrow />
+    </Link>
+  );
+}
+
+export function RouteCta({
+  to,
+  children,
+  variant = "text",
+  className = "",
+}: CtaProps & { to: string }) {
+  return (
+    <Link to={to} className={`${styles[variant]} ${className}`}>
+      {children}
+      <Arrow />
+    </Link>
+  );
+}
+
 export function SolidCta({
   href,
   children,
@@ -94,10 +144,7 @@ export function SolidCta({
   className?: string;
 }) {
   return (
-    <a
-      href={href}
-      className={`label-mono group inline-flex items-center gap-4 bg-lime px-6 py-4 text-lime-foreground transition-colors hover:bg-cream ${className}`}
-    >
+    <a href={href} className={`${solid} ${className}`}>
       {children}
       <Arrow />
     </a>
@@ -114,12 +161,34 @@ export function TextCta({
   className?: string;
 }) {
   return (
-    <a
-      href={href}
-      className={`label-mono group inline-flex items-center gap-3 text-lime transition-colors hover:text-cream ${className}`}
-    >
+    <a href={href} className={`${text} ${className}`}>
       {children}
       <Arrow />
     </a>
+  );
+}
+
+export function PageHero({
+  eyebrow,
+  title,
+  lede,
+  children,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  lede?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <section className="border-b border-hairline bg-ink px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-44">
+      <div className="mx-auto max-w-[1200px]">
+        <Eyebrow>{eyebrow}</Eyebrow>
+        <h1 className="display mt-8 max-w-4xl text-[clamp(2.5rem,7vw,5rem)] text-cream">{title}</h1>
+        {lede ? (
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">{lede}</p>
+        ) : null}
+        {children ? <div className="mt-10 flex flex-wrap items-center gap-6">{children}</div> : null}
+      </div>
+    </section>
   );
 }
