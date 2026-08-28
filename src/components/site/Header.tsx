@@ -1,13 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { mailto } from "./primitives";
-
-const NAV = [
-  { label: "The founder", href: "#founder" },
-  { label: "Signature topic", href: "#signature" },
-  { label: "Ways to engage", href: "#engage" },
-  { label: "Contact", href: "#contact" },
-];
-
+import { NAV } from "@/content/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,39 +18,41 @@ export function Header() {
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
           ? "border-hairline bg-ink/90 py-3 backdrop-blur-md"
-          : "border-transparent bg-transparent py-5"
+          : "border-transparent bg-ink/40 py-5 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-6 md:px-12">
-        <a href="#top" className="flex items-center gap-3" aria-label="Maaz Patel home">
+      <div className="mx-auto flex max-w-[1320px] items-center justify-between gap-6 px-6 md:px-12">
+        <Link to="/" className="flex items-center gap-3" aria-label="Maaz Patel — home">
           <span className="display bg-lime px-2 py-1 text-lg text-lime-foreground">MP</span>
-        </a>
+          <span className="label-mono hidden text-cream sm:inline">Maaz Patel</span>
+        </Link>
 
-        <nav className="hidden items-center gap-9 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 xl:flex">
           {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.to}
+              to={item.to}
               className="label-mono text-muted-foreground transition-colors hover:text-cream"
+              activeProps={{ className: "label-mono text-lime" }}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={mailto("Starting a conversation")}
+          <Link
+            to="/contact"
             className="label-mono hidden border border-lime px-5 py-3 text-lime transition-colors hover:bg-lime hover:text-lime-foreground sm:inline-block"
           >
-            Start a conversation
-          </a>
+            Work with Maaz
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="label-mono border border-hairline px-4 py-3 text-cream lg:hidden"
+            className="label-mono border border-hairline px-4 py-3 text-cream xl:hidden"
           >
             {open ? "Close" : "Menu"}
           </button>
@@ -65,19 +60,21 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-hairline bg-ink px-6 py-6 lg:hidden">
+        <nav aria-label="Mobile" className="border-t border-hairline bg-ink px-6 py-6 xl:hidden">
           <ul className="flex flex-col gap-5">
-            {NAV.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="label-mono text-cream"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {[...NAV, { label: "Media Kit", to: "/media-kit" }, { label: "Contact", to: "/contact" }].map(
+              (item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className="label-mono text-cream"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
       )}
