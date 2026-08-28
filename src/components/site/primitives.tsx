@@ -113,7 +113,7 @@ export function InquiryCta({
   className = "",
 }: CtaProps & { type: string }) {
   return (
-    <Link to="/contact" search={{ type }} className={`${styles[variant]} ${className}`}>
+    <Link to={"/contact" as never} search={{ type } as never} className={`${styles[variant]} ${className}`}>
       {children}
       <Arrow />
     </Link>
@@ -127,7 +127,7 @@ export function RouteCta({
   className = "",
 }: CtaProps & { to: string }) {
   return (
-    <Link to={to} className={`${styles[variant]} ${className}`}>
+    <Link to={to as never} className={`${styles[variant]} ${className}`}>
       {children}
       <Arrow />
     </Link>
