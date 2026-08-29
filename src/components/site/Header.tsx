@@ -43,6 +43,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
+            search={{ type: "other" }}
             className="label-mono hidden border border-lime px-5 py-3 text-lime transition-colors hover:bg-lime hover:text-lime-foreground sm:inline-block"
           >
             Work with Maaz
