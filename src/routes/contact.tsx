@@ -7,7 +7,7 @@ import { PageHero, Reveal, Section, Eyebrow, TextCta, mailto } from "@/component
 
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>) => ({
-    type: typeof search.type === "string" ? search.type : "other",
+    type: typeof search["type"] === "string" ? (search["type"] as string) : "other",
   }),
   head: () =>
     meta(
