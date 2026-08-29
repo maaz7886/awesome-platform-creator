@@ -2,17 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
-import { Founder } from "@/components/site/Founder";
-import { StartHere, Engage } from "@/components/site/Engage";
-import { Audience } from "@/components/site/Audience";
-import { Campus, SignatureTopic } from "@/components/site/Campus";
-import { Room, WhyThisWork } from "@/components/site/Room";
-import { Contact, Footer } from "@/components/site/Contact";
+import { Proof } from "@/components/site/Proof";
+import { Thesis } from "@/components/site/Thesis";
+import { SelectedWork } from "@/components/site/SelectedWork";
+import { WhatIDo } from "@/components/site/WhatIDo";
+import { Founder, Aivalytics } from "@/components/site/Founder";
+import { SignatureThinking } from "@/components/site/SignatureThinking";
+import { Built } from "@/components/site/Built";
+import { InTheRoom } from "@/components/site/InTheRoom";
+import { Institutional } from "@/components/site/Institutional";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Notes } from "@/components/site/Notes";
+import { ContactCta } from "@/components/site/ContactCta";
+import { Footer } from "@/components/site/Contact";
 
-const TITLE = "Maaz Patel — Founder of Aivalytics & The Rise of Veritative Companies";
+const TITLE = "Maaz Patel — AI Platform Architect, Speaker & Founder of AIValytics";
 const DESCRIPTION =
-  "Maaz Patel, Founder & CEO of Aivalytics, on the rise of Veritative Companies: small expert teams amplified by AI agents, automation, and intelligent systems.";
-
+  "Maaz Patel builds AI systems, programs and operating models that make institutions, founders and teams AI-native. 25,000+ students engaged, 20+ startups, programs across India.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,16 +40,19 @@ function Index() {
       <Header />
       <main>
         <Hero />
+        <Proof />
+        <Thesis />
+        <SelectedWork />
+        <WhatIDo />
         <Founder />
-        <SignatureTopic />
-        <StartHere />
-        <Engage />
-        <Audience />
-        <Campus />
-        <Room />
-        <WhyThisWork />
-        <Contact />
-
+        <SignatureThinking />
+        <Aivalytics />
+        <Built />
+        <InTheRoom />
+        <Institutional />
+        <Testimonials />
+        <Notes />
+        <ContactCta />
       </main>
       <Footer />
     </div>
