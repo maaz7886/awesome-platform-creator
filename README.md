@@ -1,14 +1,19 @@
-# Welcome to your Lovable project
+# Project Replication Hub
+
+https://df3195e4-c5fa-4d0d-b531-220f3841bc6d-00-sciat7ftnyh3.sisko.replit.dev/#top
+build exct same platform.
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://awesome-platform-creator.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/df2e4350-e806-40c8-9069-03943fa799e9).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +25,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
